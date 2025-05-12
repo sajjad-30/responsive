@@ -2,6 +2,7 @@
 <html lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"   />
 
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
@@ -9,6 +10,39 @@
         .contianer {
             height: 100%;
             width: 100%;
+        }
+
+        .nav {
+            height: 5.21vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid black;
+            padding: 0 3vw;
+        }
+
+        nav h2 {
+            font-size: 3vw;
+            font-weight: 700;
+        }
+
+        nav h4 {
+            font-size: 1.2vw;
+        }
+
+        .nav2 {
+            display: flex;
+            gap: 4vw;
+        }
+
+        .nav button {
+            font-size: 1vw;
+            padding: 0.6vw 1.4vw;
+            background-color: #003d76;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-weight: 700;
         }
 
         .content {
@@ -64,6 +98,20 @@
         }
 
         @media only screen and (max-width: 600px) {
+            nav {
+                padding: 0 6vw;
+
+            }
+
+            .nav h2 {
+                font-size: 6vw;
+            }
+
+            .nav h4 {
+
+                font-size: 4vw;
+            }
+
             .content {
                 height: calc(100% - 60px);
                 flex-direction: column-reverse;
@@ -107,6 +155,16 @@
 
 <body>
     <div class="contianer">
+        <div class="nav">
+            <h2>logo</h2>
+            <div class="nav2">
+                <h4>home</h4>
+                <h4>About</h4>
+                <h4>Services</h4>
+                <h4>Contact</h4>
+            </div>
+           <button>login</button>
+        </div>
         <div class="content">
             <div class="left">
                 <h1>lern more for <span>game </span></h1>
