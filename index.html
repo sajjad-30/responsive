@@ -1,183 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"   />
-
-
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <style>
-        .contianer {
-            height: 100%;
-            width: 100%;
-        }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <title>Responsive Landing Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .nav {
-            height: 5.21vw;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 2px solid black;
-            padding: 0 3vw;
-        }
+    body {
+      font-family: sans-serif;
+    }
 
-        nav h2 {
-            font-size: 3vw;
-            font-weight: 700;
-        }
+    .container {
+      width: 100%;
+    }
 
-        nav h4 {
-            font-size: 1.2vw;
-        }
+    .nav {
+      height: 5.21vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid black;
+      padding: 0 3vw;
+    }
 
-        .nav2 {
-            display: flex;
-            gap: 4vw;
-        }
+    .nav h2 {
+      font-size: 3vw;
+      font-weight: 700;
+    }
 
-        .nav button {
-            font-size: 1vw;
-            padding: 0.6vw 1.4vw;
-            background-color: #003d76;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-weight: 700;
-        }
+    .nav-links {
+      display: flex;
+      gap: 4vw;
+      transition: max-height 0.3s ease;
+    }
 
-        .content {
-            height: 80%;
-            width: 100%;
+    .nav-links h4 {
+      font-size: 1.2vw;
+    }
 
-            display: flex;
-        }
+    .nav button {
+      font-size: 1vw;
+      padding: 0.6vw 1.4vw;
+      background-color: #003d76;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-weight: 700;
+    }
 
-        .left {
-            padding: 5vw 3vw;
-            height: 100%;
-            width: 50%;
+    .ri-menu-line {
+      font-size: 30px;
+      display: none;
+      cursor: pointer;
+    }
 
-        }
+    .content {
+      display: flex;
+      width: 100%;
+      height: 80vh;
+    }
 
-        .left h1 {
-            font-size: 4.2vw;
-            line-height: 4.4vw;
-        }
+    .left {
+      padding: 5vw 3vw;
+      width: 50%;
+    }
 
-        .left h1 span {
-            color: #003d76;
-        }
+    .left h1 {
+      font-size: 4.2vw;
+      line-height: 4.4vw;
+    }
 
-        .left p {
-            font-size: 1.2vw;
-            font-weight: 600;
-            color: #666;
-            width: 80%;
-            margin-top: 2vw;
-            margin-bottom: 3vw;
-        }
+    .left h1 span {
+      color: #003d76;
+    }
 
-        .left button {
-            font-size: 1.3vw;
-            padding: 1.2vw 2.1vw;
-            background-color: #003d76;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-weight: 700;
-        }
+    .left p {
+      font-size: 1.2vw;
+      font-weight: 600;
+      color: #666;
+      width: 80%;
+      margin-top: 2vw;
+      margin-bottom: 3vw;
+    }
 
-        .right {
-            height: 100%;
-            width: 45%;
-        }
+    .left button {
+      font-size: 1.3vw;
+      padding: 1.2vw 2.1vw;
+      background-color: #003d76;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-weight: 700;
+    }
 
-        .right img {
-            height: 100%;
-            width: 100%;
-        }
+    .right {
+      width: 50%;
+    }
 
-        @media only screen and (max-width: 600px) {
-            nav {
-                padding: 0 6vw;
+    .right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-            }
+    @media only screen and (max-width: 600px) {
+      .nav {
+        padding: 6vw;
+      }
 
-            .nav h2 {
-                font-size: 6vw;
-            }
+      .nav h2 {
+        font-size: 6vw;
+      }
 
-            .nav h4 {
+      .nav button {
+        display: none;
+      }
 
-                font-size: 4vw;
-            }
+      .ri-menu-line {
+        display: block;
+      }
 
-            .content {
-                height: calc(100% - 60px);
-                flex-direction: column-reverse;
-            }
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 4vw;
+        max-height: 0;
+        overflow: hidden;
+      }
 
-            .left {
-                width: 100%;
-                height: 45%;
-                padding: 4vw 6vw;
-            }
+      .nav-links h4 {
+        font-size: 5vw;
+      }
 
-            .left h1 {
-                font-size: 10vw;
-                line-height: 11vw;
-            }
+      .content {
+        flex-direction: column-reverse;
+        height: auto;
+      }
 
-            .left p {
-                font-size: 4vw;
-                width: 90%;
-                margin-bottom: 8vw;
-            }
+      .left {
+        width: 100%;
+        padding: 4vw 6vw;
+      }
 
-            .left button {
-                padding: 3vw 6vw;
-                border-radius: 3px;
-                font-size: 3.5vw;
-                font-weight: 600;
-            }
+      .left h1 {
+        font-size: 10vw;
+        line-height: 11vw;
+      }
 
-            .right img {
-                width: 100%;
-            }
+      .left p {
+        font-size: 4vw;
+        width: 90%;
+        margin-bottom: 8vw;
+      }
 
-            .right {
-                height: 55%;
-                width: 100%;
-            }
-        }
-    </style>
+      .left button {
+        padding: 3vw 6vw;
+        font-size: 3.5vw;
+        border-radius: 3px;
+      }
+
+      .right {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div class="contianer">
-        <div class="nav">
-            <h2>logo</h2>
-            <div class="nav2">
-                <h4>home</h4>
-                <h4>About</h4>
-                <h4>Services</h4>
-                <h4>Contact</h4>
-            </div>
-           <button>login</button>
-        </div>
-        <div class="content">
-            <div class="left">
-                <h1>lern more for <span>game </span></h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum voluptatum recusandae assumenda ipsa
-                    itaque. Accusantium tempora rem odio cumque, in iste libero reiciendis nihil explicabo laudantium,
-                    voluptate aut praesentium recusandae?</p>
-                <button>Explore now</button>
-            </div>
-            <div class="right">
-                <img src="img/boy.png" alt="">
-            </div>
-        </div>
+  <div class="container">
+    <div class="nav">
+      <h2>Logo</h2>
+      <div class="nav-links" id="menulist">
+        <h4>Home</h4>
+        <h4>About</h4>
+        <h4>Services</h4>
+        <h4>Contact</h4>
+      </div>
+      <button>Login</button>
+      <i class="ri-menu-line" onclick="togglemenu()"></i>
     </div>
-</body>
 
+    <div class="content">
+      <div class="left">
+        <h1>Learn more for <span>game</span></h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium tempora rem odio cumque in iste libero
+          nihil explicabo laudantium voluptate aut praesentium!</p>
+        <button>Explore now</button>
+      </div>
+      <div class="right">
+        <img src="img/boy.png" alt="Boy Image">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let menulist = document.getElementById("menulist");
+
+    function togglemenu() {
+      if (menulist.style.maxHeight === "0px" || menulist.style.maxHeight === "") {
+        menulist.style.maxHeight = "300px";
+      } else {
+        menulist.style.maxHeight = "0px";
+      }
+    }
+  </script>
+</body>
 </html>
